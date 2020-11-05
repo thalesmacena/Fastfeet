@@ -1,0 +1,25 @@
+// Método Index
+GET http://localhost:3333/users
+###
+// Métodod Store
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Thales",
+  "email": "thalesmacena@gmail.com",
+  "password": "123456"
+}
+###
+// Método Put
+PUT http://localhost:3333/users HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTYwNDUyMDg4MiwiZXhwIjoxNjA1MTI1NjgyfQ.IYv7CTe9L2id7Mukgpjay71c5ONlo_Ue91BuW4jDWtU
+
+{
+  "name": "Gabriele Batista Melo da Silva",
+  "email": "batistagabriele1@gmail.com",
+  "oldPassword": "dinossaurodoce1",
+  "password": "dinossaurodoce",
+  "confirmPassword": "dinossaurodoce"
+}

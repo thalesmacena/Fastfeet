@@ -1,0 +1,13 @@
+// Método Index
+GET http://localhost:3333/recipients
+###
+// Métodod Store
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Thales",
+  "email": "thalesmacena@gmail.com",
+  "password": "123456"
+}
+###

@@ -1,12 +1,10 @@
 import Recipients from '../models/Recipients';
-import User from '../models/User';
 
 class RecipientsController {
   async index(req, res) {
-    const users = await User.findAll();
     const recipients = await Recipients.findAll();
 
-    return res.json({ recipients, users });
+    return res.json({ recipients });
   }
 
   async store(req, res) {

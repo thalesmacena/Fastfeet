@@ -6,8 +6,12 @@ POST http://localhost:3333/users HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Thales",
-  "email": "thalesmacena@gmail.com",
-  "password": "123456"
+  "name": "Thales Monteiro",
+  "rua": "Estr. Prof. Daltro Santos",
+  "numero": 5,
+  "complemento": "Casa 3",
+  "estado": "RJ",
+  "cidade": "Rio de Janeiro",
+  "cep": "23092-205",
 }
 ###

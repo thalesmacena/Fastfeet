@@ -2,8 +2,9 @@
 GET http://localhost:3333/recipients
 ###
 // Métodod Store
-POST http://localhost:3333/users HTTP/1.1
+POST http://localhost:3333/recipients HTTP/1.1
 content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA0ODcxMDgxLCJleHAiOjE2MDU0NzU4ODF9.ogkC6Mjb3U0ktJOI8K7IlhumfVvMZjal42TOlN7x-P4
 
 {
   "name": "Thales Monteiro",
@@ -12,6 +13,20 @@ content-type: application/json
   "complemento": "Casa 3",
   "estado": "RJ",
   "cidade": "Rio de Janeiro",
-  "cep": "23092-205",
+  "cep": "23092-205"
 }
 ###
+// Método Put
+PUT http://localhost:3333/recipients/1 HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA0ODcxMDgxLCJleHAiOjE2MDU0NzU4ODF9.ogkC6Mjb3U0ktJOI8K7IlhumfVvMZjal42TOlN7x-P4
+
+{
+  "name": "Gabriele Batista",
+  "rua": "Estr. de Sepetiba",
+  "numero": 5011,
+  "complemento": "Lote 9/10",
+  "estado": "RJ",
+  "cidade": "Rio de Janeiro",
+  "cep": "23545-003"
+}

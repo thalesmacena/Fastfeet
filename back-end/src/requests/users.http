@@ -1,0 +1,13 @@
+// Método Index
+GET http://localhost:3333/users
+###
+// Métodod Store
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA0ODcxMDgxLCJleHAiOjE2MDU0NzU4ODF9.ogkC6Mjb3U0ktJOI8K7IlhumfVvMZjal42TOlN7x-P4
+
+{
+  "name": "Gabriele",
+  "email": "batistagabriele1@gmail.com",
+  "password": "dinossauro"
+}

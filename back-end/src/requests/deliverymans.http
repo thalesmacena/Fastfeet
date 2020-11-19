@@ -1,0 +1,29 @@
+// index 
+GET http://localhost:3333/deliverymans HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+
+### store
+POST http://localhost:3333/deliverymans HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+
+{
+  "name": "Jhane Doe",
+  "avatar_id": "1",
+  "email": "jhane@example.com"
+}
+
+### Update
+PUT http://localhost:3333/deliverymans/1 HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+
+{
+  "name": "Jhon Doe",
+  "email": "jhon@example.com"
+}
+
+###
+// Destroy
+DELETE http://localhost:3333/deliverymans/1 HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg

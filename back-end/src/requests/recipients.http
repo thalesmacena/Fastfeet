@@ -4,7 +4,7 @@ GET http://localhost:3333/recipients
 // Métodod Store
 POST http://localhost:3333/recipients HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA0ODcxMDgxLCJleHAiOjE2MDU0NzU4ODF9.ogkC6Mjb3U0ktJOI8K7IlhumfVvMZjal42TOlN7x-P4
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzYzNjY4LCJleHAiOjE2MDYzNjg0Njh9.oXsYXWbYWJyOuluCnxg7bOq29VjghB8k5uDsS1kS3cU
 
 {
   "name": "Thales Monteiro",
@@ -19,7 +19,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 // Método Put
 PUT http://localhost:3333/recipients/1 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA0ODcxMDgxLCJleHAiOjE2MDU0NzU4ODF9.ogkC6Mjb3U0ktJOI8K7IlhumfVvMZjal42TOlN7x-P4
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzYzNjY4LCJleHAiOjE2MDYzNjg0Njh9.oXsYXWbYWJyOuluCnxg7bOq29VjghB8k5uDsS1kS3cU
 
 {
   "name": "Gabriele Batista",

@@ -12,7 +12,7 @@ class Delivery extends Model {
         cancelable: {
           type: Sequelize.VIRTUAL,
           get() {
-            return isBefore(new Date(), subDays(this.date, 1));
+            return isBefore(new Date(), subDays(this.end_date, 1));
           },
         },
       },
@@ -25,9 +25,9 @@ class Delivery extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Recipients, {
-      foreignKey: 'recipients_id',
-      as: 'recipients',
+    this.belongsTo(models.Recipient, {
+      foreignKey: 'recipient_id',
+      as: 'recipient',
     });
     this.belongsTo(models.Deliveryman, {
       foreignKey: 'deliveryman_id',

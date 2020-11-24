@@ -1,9 +1,9 @@
 import * as Yup from 'yup';
-import Recipients from '../models/Recipients';
+import Recipient from '../models/Recipient';
 
-class RecipientsController {
+class RecipientController {
   async index(req, res) {
-    const recipients = await Recipients.findAll();
+    const recipients = await Recipient.findAll();
 
     return res.json({ recipients });
   }
@@ -23,7 +23,7 @@ class RecipientsController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const recipientExist = await Recipients.findOne({
+    const recipientExist = await Recipient.findOne({
       where: {
         name: req.body.name,
         rua: req.body.rua,
@@ -35,7 +35,7 @@ class RecipientsController {
       return res.status(400).json({ error: 'Recipient already exist' });
     }
 
-    const recipient = await Recipients.create(req.body);
+    const recipient = await Recipient.create(req.body);
 
     return res.status(201).json({ recipient });
   }
@@ -55,7 +55,7 @@ class RecipientsController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const recipient = await Recipients.findByPk(req.params.id);
+    const recipient = await Recipient.findByPk(req.params.id);
 
     if (!recipient) {
       return res.status(400).json({ error: 'Recipient does not exist' });
@@ -83,4 +83,4 @@ class RecipientsController {
   }
 }
 
-export default new RecipientsController();
+export default new RecipientController();

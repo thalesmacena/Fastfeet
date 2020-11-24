@@ -1,8 +1,10 @@
 import * as Yup from 'yup';
+import Queue from '../../lib/Queue';
+import RegisterMail from '../jobs/RegisterMail';
 import Delivery from '../models/Delivery';
 import Deliveryman from '../models/Deliveryman';
 import File from '../models/File';
-import Recipients from '../models/Recipients';
+import Recipient from '../models/Recipient';
 
 class DeliveryController {
   async index(req, res) {
@@ -12,7 +14,7 @@ class DeliveryController {
     const deliverymanExists = await Deliveryman.findByPk(deliverymanId);
 
     if (!deliverymanExists) {
-      return res.status(404).json({ error: 'Deliveryman does not exist.' });
+      return res.status(400).json({ error: 'Deliveryman does not exist.' });
     }
 
     const deliverys = await Delivery.findAll({
@@ -30,9 +32,10 @@ class DeliveryController {
       offset: (page - 1) * 5,
       include: [
         {
-          model: Recipients,
-          as: 'recipients',
+          model: Recipient,
+          as: 'recipient',
           attributes: [
+            'id',
             'name',
             'rua',
             'numero',
@@ -45,7 +48,7 @@ class DeliveryController {
         {
           model: Deliveryman,
           as: 'deliveryman',
-          attributes: ['id', 'name, email'],
+          attributes: ['id', 'name', 'email'],
           include: [
             {
               model: File,
@@ -83,8 +86,8 @@ class DeliveryController {
       offset: (page - 1) * 5,
       include: [
         {
-          model: Recipients,
-          as: 'recipients',
+          model: Recipient,
+          as: 'recipient',
           attributes: [
             'name',
             'rua',
@@ -131,19 +134,25 @@ class DeliveryController {
 
     const { recipient_id, deliveryman_id } = req.body;
 
-    const recipientExists = await Recipients.findByPk(recipient_id);
+    const recipient = await Recipient.findByPk(recipient_id);
 
-    if (!recipientExists) {
+    if (!recipient) {
       return res.status(400).json({ error: 'Recipient does not exist' });
     }
 
-    const deliverymanExists = await Recipients.findByPk(deliveryman_id);
+    const deliveryman = await Deliveryman.findByPk(deliveryman_id);
 
-    if (!deliverymanExists) {
+    if (!deliveryman) {
       return res.status(400).json({ error: 'Deliveryman does not exist' });
     }
 
     const { id, product } = await Delivery.create(req.body);
+
+    await Queue.add(RegisterMail.key, {
+      deliveryman,
+      recipient,
+      product,
+    });
 
     return res.json({ id, product, recipient_id, deliveryman_id });
   }

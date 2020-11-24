@@ -1,11 +1,11 @@
 // index 
 GET http://localhost:3333/deliverymans HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 ### store
 POST http://localhost:3333/deliverymans HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
   "name": "Jhane Doe",
@@ -16,7 +16,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 ### Update
 PUT http://localhost:3333/deliverymans/1 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
   "name": "Jhon Doe",
@@ -26,4 +26,4 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 ###
 // Destroy
 DELETE http://localhost:3333/deliverymans/1 HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzM0ODg5LCJleHAiOjE2MDYzMzk2ODl9.Itv0I7AaIctrSus6Me8HGgRa6tZvR3tRgseqIh3hZRg
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I

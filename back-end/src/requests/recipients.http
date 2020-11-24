@@ -4,22 +4,22 @@ GET http://localhost:3333/recipients
 // Métodod Store
 POST http://localhost:3333/recipients HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzYzNjY4LCJleHAiOjE2MDYzNjg0Njh9.oXsYXWbYWJyOuluCnxg7bOq29VjghB8k5uDsS1kS3cU
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Thales Monteiro",
-  "rua": "Estr. Prof. Daltro Santos",
-  "numero": 5,
-  "complemento": "Casa 3",
-  "estado": "RJ",
-  "cidade": "Rio de Janeiro",
-  "cep": "23092-205"
+  "name": "Jhon Doe",
+  "rua": "Street of none",
+  "numero": 1,
+  "complemento": "House 1",
+  "estado": "NA",
+  "cidade": "Not available",
+  "cep": "12345-123"
 }
 ###
 // Método Put
 PUT http://localhost:3333/recipients/1 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1NzYzNjY4LCJleHAiOjE2MDYzNjg0Njh9.oXsYXWbYWJyOuluCnxg7bOq29VjghB8k5uDsS1kS3cU
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
   "name": "Gabriele Batista",

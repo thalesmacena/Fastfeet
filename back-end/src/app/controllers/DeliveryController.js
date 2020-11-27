@@ -8,21 +8,12 @@ import Recipient from '../models/Recipient';
 
 class DeliveryController {
   async index(req, res) {
-    const { deliverymanId } = req.params;
     const { page = 1, limit = 5 } = req.query;
 
-    const deliverymanExists = await Deliveryman.findByPk(deliverymanId);
-
-    if (!deliverymanExists) {
-      return res.status(400).json({ error: 'Deliveryman does not exist.' });
-    }
-
     const deliverys = await Delivery.findAll({
-      where: { deliveryman_id: deliverymanId },
       attributes: [
         'id',
         'product',
-        'cancelable',
         'canceled_at',
         'cancelable',
         'start_date',

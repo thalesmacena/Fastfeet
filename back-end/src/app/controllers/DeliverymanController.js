@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import Deliveryman from '../models/Deliveryman';
 import File from '../models/File';
+import User from '../models/User';
 
 class DeliverymanController {
   async index(req, res) {
@@ -27,6 +28,7 @@ class DeliverymanController {
       name: Yup.string().required(),
       avatar_id: Yup.string(),
       email: Yup.string().required(),
+      user_id: Yup.string().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -41,6 +43,14 @@ class DeliverymanController {
       res
         .status(400)
         .json({ error: 'There is already a registered user with this email' });
+    }
+
+    const { user_id } = req.body;
+
+    const user = await User.findByPk(user_id);
+
+    if (!user) {
+      return res.status(400).json({ error: 'user does not exist' });
     }
 
     const { id, name, avatar_id, email } = await Deliveryman.create(req.body);
@@ -90,10 +100,13 @@ class DeliverymanController {
       res.status(400).json({ error: 'Deliveryman does not exist.' });
     }
 
+    const user = await User.findByPk(deliveryman.user_id);
+
     await deliveryman.destroy(deliveryman);
+    await user.destroy(user);
 
     return res.json({
-      message: 'Deliveryman has been deleted.',
+      message: 'Deliveryman and user has been deleted.',
       name: deliveryman.name,
     });
   }

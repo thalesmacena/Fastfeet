@@ -1,5 +1,6 @@
 // Método Index
 GET http://localhost:3333/users
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 ###
 // Métodod Store
 POST http://localhost:3333/users HTTP/1.1

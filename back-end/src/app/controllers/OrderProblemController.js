@@ -106,6 +106,7 @@ class OrderProblemController {
       attributes: [
         'id',
         'product',
+        'deliveryman_id',
         'canceled_at',
         'cancelable',
         'start_date',
@@ -162,8 +163,12 @@ class OrderProblemController {
       return res.status(400).json({ error: 'Delivery is closed' });
     }
 
+    const { description } = req.body;
     // Store the problem
-    const { id, description } = await DeliveryProblem.store(req.body);
+    const { id } = await DeliveryProblem.create({
+      description,
+      delivery_id: deliveryId,
+    });
 
     return res.status(201).json({ id, description, delivery });
   }
@@ -171,7 +176,7 @@ class OrderProblemController {
   async delete(req, res) {
     const { problemId } = req.params;
 
-    const problem = await Delivery.findByPk(problemId, {
+    const problem = await DeliveryProblem.findByPk(problemId, {
       attributes: ['id', 'description', 'delivery_id'],
     });
 

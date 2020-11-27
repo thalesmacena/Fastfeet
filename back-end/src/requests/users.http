@@ -2,13 +2,26 @@
 GET http://localhost:3333/users
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 ###
+
 // Métodod Store
 POST http://localhost:3333/users HTTP/1.1
 content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Gabriele",
-  "email": "batistagabriele1@gmail.com",
-  "password": "dinossauro"
+  "name": "Jhane Doe",
+  "email": "jhane@example.com",
+  "password": "123456",
+  "admin": false
+}
+
+// Métodod Update
+PUT http://localhost:3333/users/1 HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
+
+{
+  "name": "Jhane Doe",
+  "email": "jhane@example.com",
+  "admin": false
 }

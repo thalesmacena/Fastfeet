@@ -92,7 +92,7 @@ class DeliveryController {
         {
           model: Deliveryman,
           as: 'deliveryman',
-          attributes: ['id', 'name, email'],
+          attributes: ['id', 'name', 'email'],
           include: [
             {
               model: File,
@@ -159,27 +159,31 @@ class DeliveryController {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const id = req.params;
+    const { deliveryId } = req.params;
 
-    const delivery = await Delivery.findByPk(id);
+    const delivery = await Delivery.findByPk(deliveryId);
 
     if (!delivery) {
       return res.status(400).json({ error: 'Delivery does not exist' });
     }
 
-    const recipientExists = await Delivery.findByPk(req.body.recipient_id);
+    const { recipient_id } = req.body;
+
+    const recipientExists = await Recipient.findByPk(recipient_id);
 
     if (!recipientExists) {
       return res.status(400).json({ error: 'Recipient does not exist' });
     }
 
-    const deliverymanExists = await Delivery.findByPk(req.body.deliveryman_id);
+    const { deliveryman_id } = req.body;
+
+    const deliverymanExists = await Deliveryman.findByPk(deliveryman_id);
 
     if (!deliverymanExists) {
-      return res.status(400).json({ error: 'Delivery does not exist' });
+      return res.status(400).json({ error: 'Deliveryman does not exist' });
     }
 
-    const deliveryUpdated = await Delivery.update(req.body);
+    const deliveryUpdated = await delivery.update(req.body);
 
     return res.json(deliveryUpdated);
   }

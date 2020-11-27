@@ -5,3 +5,11 @@ content-type: application/json
   "email": "admin@fastfeet.com",
   "password": "123456"
 }
+###
+POST http://localhost:3333/sessions HTTP/1.1
+content-type: application/json
+
+{
+  "email": "jhane@example.com",
+  "password": "12345"
+}

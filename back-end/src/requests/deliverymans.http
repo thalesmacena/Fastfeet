@@ -10,7 +10,8 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 {
   "name": "Jhane Doe",
   "avatar_id": "1",
-  "email": "jhane@example.com"
+  "email": "jhane@example.com",
+  "user_id": 2
 }
 
 ### Update

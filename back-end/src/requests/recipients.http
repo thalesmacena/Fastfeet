@@ -23,11 +23,11 @@ content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Gabriele Batista",
-  "rua": "Estr. de Sepetiba",
-  "numero": 5011,
-  "complemento": "Lote 9/10",
-  "estado": "RJ",
-  "cidade": "Rio de Janeiro",
-  "cep": "23545-003"
+  "name": "Jhane Doe",
+  "rua": "Streete of none",
+  "numero": 2,
+  "complemento": "N/a",
+  "estado": "NA",
+  "cidade": "None",
+  "cep": "12345-123"
 }

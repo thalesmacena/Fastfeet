@@ -1,0 +1,23 @@
+// index
+GET http://localhost:3333/delivery/problems
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+
+###
+// show
+GET http://localhost:3333/delivery/1/problems
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+
+###
+// store
+POST http://localhost:3333/delivery/1/problems
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+
+{
+  "description": "Test Problem"
+}
+
+###
+// delete
+DELETE http://localhost:3333/problems/3/cancel-delivery HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I

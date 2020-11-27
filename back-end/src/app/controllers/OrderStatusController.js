@@ -49,7 +49,7 @@ class OrderStatusController {
     }
 
     // Check if Delivery is closed
-    if (delivery.end_date || delivery.canceled_at) {
+    if (delivery.end_date !== null || delivery.canceled_at !== null) {
       return res.status(400).json({ error: 'Delivery is closed' });
     }
 
@@ -120,12 +120,12 @@ class OrderStatusController {
           as: 'recipient',
           attributes: [
             'name',
-            'street',
-            'number',
-            'complement',
-            'state',
-            'city',
-            'zip',
+            'rua',
+            'numero',
+            'complemento',
+            'estado',
+            'cidade',
+            'cep',
           ],
         },
         {

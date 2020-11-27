@@ -1,0 +1,27 @@
+// Index of Deliveryman deliverys
+GET http://localhost:3333/deliveryman/1/deliveries HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+###
+// Index of Deliveryman delivered deliverys
+GET http://localhost:3333/deliveryman/1/delivered HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+###
+// Order Withdraw start_date
+PUT http://localhost:3333/delivery/1/withdraw HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+
+{
+  "start_date": "2021-12-25T15:00:00-03:00"
+}
+###
+// Order Withdraw start_date
+PUT http://localhost:3333/delivery/1/withdraw HTTP/1.1
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+
+{
+  "end_date": "2022-01-01T15:00:00-03:00",
+  "signature_id": 1
+}
+

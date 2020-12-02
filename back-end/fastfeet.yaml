@@ -1,0 +1,408 @@
+---
+openapi: 3.0.3
+info:
+  title: FastFeet
+  description: FastFeet back-end API
+  version: "1.0"
+servers:
+  - url: http://localhost:3333
+    description: back-end of application
+paths:
+  "/users":
+    description: Rotas para listagem, criação e alteração de usuários, é preciso ser um administrador para usar essas rotas.
+    get:
+      summary: Lista os usuários cadastrados na aplicação
+      description: Lista 20 usuários cadastrados na aplicação por página
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: O número da página de usuários, por padrão é 1
+          required: false
+          schema:
+            type: number
+            example: "1"
+      responses:
+        "200":
+          description: Lista de usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Jhon Doe
+                        email:
+                          type: string
+                          example: jhon@example.com
+                        admin:
+                          type: boolean
+                          example: true
+    post:
+      description: Cria um novo usuário
+      summary: Cria um novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Jhon Doe
+                email:
+                  type: string
+                  example: jhon@example.com
+                password:
+                  type: string
+                  example: password
+                admin:
+                  type: boolean
+                  example: true
+      responses:
+        "201":
+          description: Cria e informa o usuário criado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: "1"
+                  name:
+                    type: string
+                    example: Jhon Doe
+                  email:
+                    type: string
+                    example: jhon@example.com
+                  admin:
+                    type: boolean
+                    example: true
+        "400":
+          description: Usuário já existe, ou validação do body incorreta
+        "401":
+          description: Autenticação falhou, ou usuário não é um administrador
+    put:
+      summary: Atualiza um usuario
+      description: "Atualiza baseado no id informado os campos: nome, email, password e admin, de um usuário"
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: Id do usuário a ser alterado
+          required: true
+          schema:
+            type: number
+            example: "2"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Jhane Doe
+                email:
+                  type: string
+                  example: jhone@example.com
+                password:
+                  type: string
+                  example: password
+                admin:
+                  type: boolean
+                  example: false
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 2
+                  name:
+                    type: string
+                    example: Jhane Doe
+                  email:
+                    type: string
+                    example: jhane@example.com
+                  admin:
+                    type: boolean
+                    example: false
+        "400":
+          description: Usuário não existe, ou falha na validação do body
+        "401":
+          description: o requerente não está autorizado ou não é um administrador
+  "/sessions":
+    post:
+      summary: Cria uma sessão com um usuário
+      description: Cria uma sessão e gera um JWT para ser usado como autenticação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: jhon@example.com
+                password:
+                  type: string
+                  example: password
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: "1"
+                      name:
+                        type: string
+                        example: Jhon Doe
+                      email:
+                        type: string
+                        example: jhon@example.com
+                  token:
+                    type: string
+                    example: Json.Web.Token
+        "400":
+          description: Falha na validação do Body
+        "401":
+          description: Usuário não encontrado ou senha invalida
+  "/files":
+    description: Rota para realizar o upload de imagens
+    post:
+      summary: Realiza um upload de uma imagem
+      description: Realiza um upload de uma imagem
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW:
+            example: |-
+              ------WebKitFormBoundary7MA4YWxkTrZu0gW
+              Content-Disposition: form-data; name='file'; filename='image.png'
+              Content-Type: image/png
+
+              < ../../tmp/uploads/image.png
+              ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+      responses:
+        "200":
+          description: Cria as credencias de uma sesssão para um usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                    example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: Jhane Doe
+                  path:
+                    type: string
+                    example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                  updatedAt:
+                    type: string
+                    example: "2020-11-14T20:50:39.548Z"
+                  createdAt:
+                    type: string
+                    example: "2020-11-14T20:50:39.548Z"
+  "/deliveryman":
+    description: "Rotas CRUD dos entregadores, é preciso ser um adminstrador para usar está rota"
+    get:
+      description: Lista os entregadores
+      summary: Lista 20 entregadores por página
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: O número da página de usuários, por padrão é 1
+          required: false
+          schema:
+            type: number
+            example: "1"
+      responses:
+        "200":
+          description: Lista até 20 entregadores
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: Jhon Doe
+                  email:
+                    type: string
+                    example: jhon@example.com
+                  avatar_id:
+                    type: integer
+                    example: 1
+                  avatar:
+                    type: object
+                    properties:
+                      url:
+                        type: string
+                        example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+                      name:
+                        type: string
+                        example: image.png
+                      path:
+                        type: string
+                        example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+    post:
+      summary: Cadastra um entregador
+      description: Cadastra um entregador
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Jhon Doe
+                email:
+                  type: string
+                  example: jhon@example.com
+                avatar_id:
+                  type: number
+                  example: 1
+                user_id:
+                  type: integer
+                  example: 1
+      responses:
+        "201":
+          description: Cria e informa o usuário criado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: "1"
+                  name:
+                    type: string
+                    example: Jhon Doe
+                  email:
+                    type: string
+                    example: jhon@example.com
+                  avatar_id:
+                    type: number
+                    example: 1
+        "400":
+          description: Deliveryman já existe, ou validação do body incorreta
+        "401":
+          description: Autenticação falhou, ou usuário não é um administrador
+    put:
+      summary: Atualiza um entregador
+      description: "Atualiza um entregador baseado no id informado os campos: nome, email, avatar_id, user_id de um entregador"
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: Id do entregador a ser alterado
+          required: true
+          schema:
+            type: number
+            example: "1"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Jhane Doe
+                email:
+                  type: string
+                  example: jhone@example.com
+                avatar_id:
+                  type: number
+                  example: 1
+                user_id:
+                  type: number
+                  example: 1
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: Jhane Doe
+                  email:
+                    type: string
+                    example: jhane@example.com
+                  avatar_id:
+                    type: number
+                    example: 1
+        "400":
+          description: Entregador não existe, ou falha na validação do body
+        "401":
+          description: o requerente não está autorizado ou não é um administrador
+    delete:
+      summary: deleta um entregador
+      description: deleta um entregador baseado num id informado
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: id do entregador
+          required: true
+          schema:
+            type: number
+            example: 1
+      responses:
+        "200":
+          description: Deleta um e informa o nome do entregador deletado
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

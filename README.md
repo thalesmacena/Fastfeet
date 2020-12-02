@@ -52,3 +52,11 @@ yarn queue
 
 7. Utilize a extesão abrindo os arquivos .http da pasta `src/requests` ou utilize essas requisições como base no seu client de API
 
+### Documentação da API
+
+Para vizualizar a documentação da API utilize o seguinte comando:
+```
+yarn api
+```
+
+Esse comando ira renderizar a documentação da api em `localhost:8080`

@@ -3,7 +3,13 @@ import User from '../models/User';
 
 class UserController {
   async index(req, res) {
-    const users = await User.findAll();
+    const { page = 1 } = req.query;
+
+    const users = await User.findAll({
+      limit: 20,
+      offset: (page - 1) * 20,
+      attributes: ['id', 'name', 'email', 'admin'],
+    });
 
     return res.json({ users });
   }
@@ -34,7 +40,7 @@ class UserController {
 
     const { id, name, email, admin } = await User.create(req.body);
 
-    return res.json({ id, name, email, admin });
+    return res.status(201).json({ id, name, email, admin });
   }
 
   async update(req, res) {
@@ -42,6 +48,7 @@ class UserController {
       name: Yup.string(),
       email: Yup.string().email(),
       admin: Yup.boolean(),
+      password: Yup.string().min(6),
     });
 
     if (!(await schema.isValid(req.body))) {

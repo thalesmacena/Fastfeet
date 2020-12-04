@@ -8,7 +8,7 @@ content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Jhon Doe",
+  "name": "John Doe",
   "rua": "Street of none",
   "numero": 1,
   "complemento": "House 1",
@@ -23,7 +23,7 @@ content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Jhane Doe",
+  "name": "Jane Doe",
   "rua": "Streete of none",
   "numero": 2,
   "complemento": "N/a",

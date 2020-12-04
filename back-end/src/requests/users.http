@@ -9,8 +9,8 @@ content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Jhane Doe",
-  "email": "jhane@example.com",
+  "name": "Jane Doe",
+  "email": "jane@example.com",
   "password": "123456",
   "admin": false
 }
@@ -21,7 +21,7 @@ content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
 
 {
-  "name": "Jhane Doe",
-  "email": "jhane@example.com",
+  "name": "Jane Doe",
+  "email": "jane@example.com",
   "admin": false
 }

@@ -8,7 +8,7 @@ servers:
   - url: http://localhost:3333
     description: back-end of application
 paths:
-  "/users":
+  /users:
     description: Rotas para listagem, criação e alteração de usuários, é preciso ser um administrador para usar essas rotas.
     get:
       summary: Lista os usuários cadastrados na aplicação
@@ -24,7 +24,7 @@ paths:
             type: number
             example: "1"
       responses:
-        "200":
+        200:
           description: Lista de usuário
           content:
             application/json:
@@ -71,7 +71,7 @@ paths:
                   type: boolean
                   example: true
       responses:
-        "201":
+        201:
           description: Cria e informa o usuário criado
           content:
             application/json:
@@ -90,9 +90,9 @@ paths:
                   admin:
                     type: boolean
                     example: true
-        "400":
+        400:
           description: Usuário já existe, ou validação do body incorreta
-        "401":
+        401:
           description: Autenticação falhou, ou usuário não é um administrador
     put:
       summary: Atualiza um usuário
@@ -126,8 +126,8 @@ paths:
                   type: boolean
                   example: false
       responses:
-        "200":
-          description: ok
+        200:
+          description: altera um usuário
           content:
             application/json:
               schema:
@@ -145,11 +145,11 @@ paths:
                   admin:
                     type: boolean
                     example: false
-        "400":
+        400:
           description: Usuário não existe, ou falha na validação do body
-        "401":
+        401:
           description: o requerente não está autorizado ou não é um administrador
-  "/sessions":
+  /sessions:
     post:
       summary: Cria uma sessão com um usuário
       description: Cria uma sessão e gera um JWT para ser usado como autenticação
@@ -167,8 +167,8 @@ paths:
                   type: string
                   example: password
       responses:
-        "200":
-          description: OK
+        200:
+          description: Cria a sessão
           content:
             application/json:
               schema:
@@ -189,11 +189,11 @@ paths:
                   token:
                     type: string
                     example: Json.Web.Token
-        "400":
+        400:
           description: Falha na validação do Body
-        "401":
+        401:
           description: Usuário não encontrado ou senha invalida
-  "/files":
+  /files:
     description: Rota para realizar o upload de imagens
     post:
       summary: Realiza um upload de uma imagem
@@ -211,7 +211,7 @@ paths:
               < ../../tmp/uploads/image.png
               ------WebKitFormBoundary7MA4YWxkTrZu0gW--
       responses:
-        "200":
+        200:
           description: Cria as credencias de uma sessão para um usuário
           content:
             application/json:
@@ -236,7 +236,7 @@ paths:
                   createdAt:
                     type: string
                     example: "2020-11-14T20:50:39.548Z"
-  "/recipients":
+  /recipients:
     description: "Rotas CRUD de destinatários, é preciso ser um administrador para usar estas rotas"
     get:
       summary: Lista todos os destinatários cadastrados
@@ -252,8 +252,8 @@ paths:
             type: number
             example: "1"
       responses:
-        "200":
-          description: List 20 recipients
+        200:
+          description: Lista 20 destinatários
           content:
             application/json:
               schema:
@@ -320,7 +320,7 @@ paths:
                   type: string
                   example: 12345-123
       responses:
-        "201":
+        201:
           description: Cria e informa o destinatário criado
           content:
             application/json:
@@ -351,9 +351,9 @@ paths:
                   cep:
                     type: string
                     example: 12345-123
-        "400":
+        400:
           description: Destinatário já existe, ou validação do body incorreta
-        "401":
+        401:
           description: Autenticação falhou, ou usuário não é um administrador
     put:
       summary: Atualiza um destinatário
@@ -396,7 +396,7 @@ paths:
                   type: string
                   example: 12345-123
       responses:
-        "200":
+        200:
           description: Destinatário Alterado
           content:
             application/json:
@@ -424,11 +424,11 @@ paths:
                   cep:
                     type: string
                     example: 12345-123
-        "400":
+        400:
           description: Destinatário não existe, ou falha na validação do body
-        "401":
+        401:
           description: o requerente não está autorizado ou não é um administrador
-  "/deliveryman":
+  /deliveryman:
     description: "Rotas CRUD dos entregadores, é preciso ser um administrador para usar estas rotas"
     get:
       description: Lista os entregadores
@@ -444,7 +444,7 @@ paths:
             type: number
             example: "1"
       responses:
-        "200":
+        200:
           description: Lista até 20 entregadores
           content:
             application/json:
@@ -471,15 +471,15 @@ paths:
                         avatar:
                           type: object
                           properties:
-                            url:
-                              type: string
-                              example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
                             name:
                               type: string
                               example: image.png
                             path:
                               type: string
                               example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                            url:
+                              type: string
+                              example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
     post:
       summary: Cadastra um entregador
       description: Cadastra um entregador
@@ -503,8 +503,8 @@ paths:
                   type: integer
                   example: 1
       responses:
-        "201":
-          description: Cria e informa o usuário criado
+        201:
+          description: Cria e informa o entregador cadastrado
           content:
             application/json:
               schema:
@@ -522,9 +522,9 @@ paths:
                   avatar_id:
                     type: number
                     example: 1
-        "400":
-          description: Deliveryman já existe, ou validação do body incorreta
-        "401":
+        400:
+          description: Entregador já existe, ou validação do body incorreta
+        401:
           description: Autenticação falhou, ou usuário não é um administrador
     put:
       summary: Atualiza um entregador
@@ -558,8 +558,8 @@ paths:
                   type: number
                   example: 1
       responses:
-        "200":
-          description: ok
+        200:
+          description: atualiza o entregador
           content:
             application/json:
               schema:
@@ -577,13 +577,13 @@ paths:
                   avatar_id:
                     type: number
                     example: 1
-        "400":
+        400:
           description: Entregador não existe, ou falha na validação do body
-        "401":
+        401:
           description: o requerente não está autorizado ou não é um administrador
     delete:
       summary: deleta um entregador
-      description: deleta um entregador baseado num id informado
+      description: deleta um entregador baseado em um id informado
       security:
         - bearerAuth: []
       parameters:
@@ -595,8 +595,351 @@ paths:
             type: number
             example: 1
       responses:
-        "200":
-          description: Deleta um e informa o nome do entregador deletado
+        200:
+          description: Deleta um e informa o nome do entregador deletado     
+  /delivery:
+    description: "Rotas CRUD de entregas, é preciso ser um administrador para usar estas rotas"
+    get:
+      description: Lista as entregas
+      summary: Lista de 5 ou mais entregas por página
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: O número da página de entregas, por padrão é 1
+          required: false
+          schema:
+            type: number
+            example: "1"
+        - name: limit
+          in: query
+          description: O número de entregas, apresentados por páginas o padrão é 1
+          required: false
+          schema:
+            type: number
+            example: "10"
+      responses:
+        200:
+          description: Lista 5 ou mais entregas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deliveries:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        product:
+                          type: string
+                          example: Package x
+                        canceled_at:
+                          type: string
+                          example: jhon@example.com
+                        cancelable:
+                          type: integer
+                          example: 1
+                        start_date:
+                          type: integer
+                          example: 1
+                        end_date:
+                          type: integer
+                          example: 1
+                        recipient:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              example: 1
+                            name:
+                              type: string
+                              example: John Doe
+                            rua:
+                              type: string
+                              example: Street of None
+                            numero:
+                              type: number
+                              example: 1
+                            complemento:
+                              type: string
+                              example: N/A
+                            estado:
+                              type: string
+                              example: NA
+                            cidade:
+                              type: string
+                              example: City of None
+                            cep:
+                              type: string
+                              example: 12345-123
+                        deliveryman:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              example: 1
+                            name:
+                              type: string
+                              example: Jane Doe
+                            email:
+                              type: string
+                              example: jane@example.com
+                            avatar:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                  example: image.png
+                                path:
+                                  type: string
+                                  example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                                url:
+                                  type: string
+                                  example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+                        signature:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              example: image.png
+                            path:
+                              type: string
+                              example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                            url:
+                              type: string
+                              example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+    post:
+      summary: Cadastra uma entrega
+      description: Cadastra uma entrega
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product:
+                  type: string
+                  example: Package
+                recipient_id:
+                  type: number
+                  example: 1
+                deliveryman_id:
+                  type: number
+                  example: 1
+      responses:
+        201:
+          description: Cria e informa a entrega criada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: "1"
+                  product:
+                    type: string
+                    example: John Doe
+                  recipient_id:
+                    type: string
+                    example: jhon@example.com
+                  deliveryman_id:
+                    type: number
+                    example: 1
+        400:
+          description: Entrega não existe, entregador não existe ou destinatario não existe ou validação do body incorreta
+        401:
+          description: Autenticação falhou, ou usuário não é um administrador
+    put:
+      summary: Atualiza um entrega
+      description: "Atualiza um entrega baseado no id informado os campos: product, recipient_id e deliveryman_id de um entrega"
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: deliveryId
+          required: true
+          schema:
+            type: number
+            example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product:
+                  type: string
+                  example: Jane Doe
+                recipient_id:
+                  type: number
+                  example: 1
+                deliveryman_id:
+                  type: number
+                  example: 1
+      responses:
+        200:
+          description: Altera a entrega
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  product:
+                    type: string
+                    example: Jane Doe
+                  recipient_id:
+                    type: integer
+                    example: 1
+                  deliveryman_id:
+                    type: number
+                    example: 1
+        400:
+          description: Entrega não existe, entregador não existe ou destinatario não existe ou validação do body incorreta
+        401:
+          description: o requerente não está autorizado ou não é um administrador
+    delete:
+      summary: cancela uma entrega
+      description: altera o campo canceled_at de uma entrega baseado em um id informado
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: deliveryId
+          in: path
+          description: id da entrega
+          required: true
+          schema:
+            type: number
+            example: 1
+      responses:
+        200:
+          description: cancela a entrega
+        400:
+          description: entrega não existe
+        401:
+          description: Entrega ja foi cancelada, ou usuario não está autenticado ou não é um administrador
+  /delivery/{deliveryID}:
+    get:
+      description: Lista uma entrega
+      summary: Lista uma entrega de acordo com o id informado
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: deliveryId
+          in: path
+          description: O da entrega, por padrão é 1
+          required: true
+          schema:
+            type: number
+            example: "1"
+      responses:
+        200:
+          description: Uma entrega
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  product:
+                    type: string
+                    example: Package x
+                  canceled_at:
+                    type: string
+                    example: jhon@example.com
+                  cancelable:
+                    type: integer
+                    example: 1
+                  start_date:
+                    type: integer
+                    example: 1
+                  end_date:
+                    type: integer
+                    example: 1
+                  recipient:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                        example: 1
+                      name:
+                        type: string
+                        example: John Doe
+                      rua:
+                        type: string
+                        example: Street of None
+                      numero:
+                        type: number
+                        example: 1
+                      complemento:
+                        type: string
+                        example: N/A
+                      estado:
+                        type: string
+                        example: NA
+                      cidade:
+                        type: string
+                        example: City of None
+                      cep:
+                        type: string
+                        example: 12345-123
+                      deliveryman:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                            example: 1
+                          name:
+                            type: string
+                            example: Jane Doe
+                          email:
+                            type: string
+                            example: jane@example.com
+                          avatar:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                                example: image.png
+                              path:
+                                type: string
+                                example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                              url:
+                                type: string
+                                example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+                      signature:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: image.png
+                          path:
+                            type: string
+                            example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                          url:
+                            type: string
+                            example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+        400:
+          description: Entrega não existe
+        401: 
+          description: Requerente não está autenticado ou o não é um administrador
+
+
+
 components:
   securitySchemes:
     bearerAuth:

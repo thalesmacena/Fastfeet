@@ -41,7 +41,7 @@ paths:
                           example: 1
                         name:
                           type: string
-                          example: Jhon Doe
+                          example: John Doe
                         email:
                           type: string
                           example: jhon@example.com
@@ -60,7 +60,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Jhon Doe
+                  example: John Doe
                 email:
                   type: string
                   example: jhon@example.com
@@ -83,7 +83,7 @@ paths:
                     example: "1"
                   name:
                     type: string
-                    example: Jhon Doe
+                    example: John Doe
                   email:
                     type: string
                     example: jhon@example.com
@@ -95,7 +95,7 @@ paths:
         "401":
           description: Autenticação falhou, ou usuário não é um administrador
     put:
-      summary: Atualiza um usuario
+      summary: Atualiza um usuário
       description: "Atualiza baseado no id informado os campos: nome, email, password e admin, de um usuário"
       security:
         - bearerAuth: []
@@ -115,7 +115,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Jhane Doe
+                  example: Jane Doe
                 email:
                   type: string
                   example: jhone@example.com
@@ -138,7 +138,7 @@ paths:
                     example: 2
                   name:
                     type: string
-                    example: Jhane Doe
+                    example: Jane Doe
                   email:
                     type: string
                     example: jhane@example.com
@@ -182,7 +182,7 @@ paths:
                         example: "1"
                       name:
                         type: string
-                        example: Jhon Doe
+                        example: John Doe
                       email:
                         type: string
                         example: jhon@example.com
@@ -212,7 +212,7 @@ paths:
               ------WebKitFormBoundary7MA4YWxkTrZu0gW--
       responses:
         "200":
-          description: Cria as credencias de uma sesssão para um usuário
+          description: Cria as credencias de uma sessão para um usuário
           content:
             application/json:
               schema:
@@ -226,7 +226,7 @@ paths:
                     example: 1
                   name:
                     type: string
-                    example: Jhane Doe
+                    example: Jane Doe
                   path:
                     type: string
                     example: fcf1b813d85c6a6ece1e674a5fc9d628.png
@@ -236,8 +236,200 @@ paths:
                   createdAt:
                     type: string
                     example: "2020-11-14T20:50:39.548Z"
+  "/recipients":
+    description: "Rotas CRUD de destinatários, é preciso ser um administrador para usar estas rotas"
+    get:
+      summary: Lista todos os destinatários cadastrados
+      description: Lista 20 destinatários cadastrados por página
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: O número da página de destinatários, por padrão é 1
+          required: false
+          schema:
+            type: number
+            example: "1"
+      responses:
+        "200":
+          description: List 20 recipients
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recipients:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: John Doe
+                        rua:
+                          type: string
+                          example: street of none
+                        numero:
+                          type: integer
+                          example: 1
+                        complemento:
+                          type: string
+                          example: N/a
+                        estado:
+                          type: string
+                          example: NA
+                        cidade:
+                          type: string
+                          example: City of none
+                        cep:
+                          type: string
+                          example: 12345-123
+    post:
+      summary: Cadastra um destinatário
+      description: Cadastra um destinatário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: John Doe
+                rua:
+                  type: string
+                  example: street of none
+                numero:
+                  type: integer
+                  example: 1
+                complemento:
+                  type: string
+                  example: N/a
+                estado:
+                  type: string
+                  example: NA
+                cidade:
+                  type: string
+                  example: City of none
+                cep:
+                  type: string
+                  example: 12345-123
+      responses:
+        "201":
+          description: Cria e informa o destinatário criado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: "1"
+                  name:
+                    type: string
+                    example: John Doe
+                  rua:
+                    type: string
+                    example: street of none
+                  numero:
+                    type: integer
+                    example: 1
+                  complemento:
+                    type: string
+                    example: N/a
+                  estado:
+                    type: string
+                    example: NA
+                  cidade:
+                    type: string
+                    example: City of none
+                  cep:
+                    type: string
+                    example: 12345-123
+        "400":
+          description: Destinatário já existe, ou validação do body incorreta
+        "401":
+          description: Autenticação falhou, ou usuário não é um administrador
+    put:
+      summary: Atualiza um destinatário
+      description: "Atualiza um destinatário baseado no id informado os campos: nome, rua, numero, complemento, estado, cidade, e cep de um destinatário"
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: Id do destinatário a ser alterado
+          required: true
+          schema:
+            type: number
+            example: "1"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: John Doe
+                rua:
+                  type: string
+                  example: street of none
+                numero:
+                  type: integer
+                  example: 1
+                complemento:
+                  type: string
+                  example: N/a
+                estado:
+                  type: string
+                  example: NA
+                cidade:
+                  type: string
+                  example: City of none
+                cep:
+                  type: string
+                  example: 12345-123
+      responses:
+        "200":
+          description: Destinatário Alterado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: John Doe
+                  rua:
+                    type: string
+                    example: street of none
+                  numero:
+                    type: integer
+                    example: 1
+                  complemento:
+                    type: string
+                    example: N/a
+                  estado:
+                    type: string
+                    example: NA
+                  cidade:
+                    type: string
+                    example: City of none
+                  cep:
+                    type: string
+                    example: 12345-123
+        "400":
+          description: Destinatário não existe, ou falha na validação do body
+        "401":
+          description: o requerente não está autorizado ou não é um administrador
   "/deliveryman":
-    description: "Rotas CRUD dos entregadores, é preciso ser um adminstrador para usar está rota"
+    description: "Rotas CRUD dos entregadores, é preciso ser um administrador para usar estas rotas"
     get:
       description: Lista os entregadores
       summary: Lista 20 entregadores por página
@@ -246,7 +438,7 @@ paths:
       parameters:
         - name: page
           in: query
-          description: O número da página de usuários, por padrão é 1
+          description: O número da página de entregadores, por padrão é 1
           required: false
           schema:
             type: number
@@ -259,30 +451,35 @@ paths:
               schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                    example: 1
-                  name:
-                    type: string
-                    example: Jhon Doe
-                  email:
-                    type: string
-                    example: jhon@example.com
-                  avatar_id:
-                    type: integer
-                    example: 1
-                  avatar:
-                    type: object
-                    properties:
-                      url:
-                        type: string
-                        example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
-                      name:
-                        type: string
-                        example: image.png
-                      path:
-                        type: string
-                        example: fcf1b813d85c6a6ece1e674a5fc9d628.png
+                  deliverymans:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: John Doe
+                        email:
+                          type: string
+                          example: jhon@example.com
+                        avatar_id:
+                          type: integer
+                          example: 1
+                        avatar:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: http://localhost:3333/files/fcf1b813d85c6a6ece1e674a5fc9d628.png
+                            name:
+                              type: string
+                              example: image.png
+                            path:
+                              type: string
+                              example: fcf1b813d85c6a6ece1e674a5fc9d628.png
     post:
       summary: Cadastra um entregador
       description: Cadastra um entregador
@@ -295,7 +492,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Jhon Doe
+                  example: John Doe
                 email:
                   type: string
                   example: jhon@example.com
@@ -318,7 +515,7 @@ paths:
                     example: "1"
                   name:
                     type: string
-                    example: Jhon Doe
+                    example: John Doe
                   email:
                     type: string
                     example: jhon@example.com
@@ -350,7 +547,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Jhane Doe
+                  example: Jane Doe
                 email:
                   type: string
                   example: jhone@example.com
@@ -373,7 +570,7 @@ paths:
                     example: 1
                   name:
                     type: string
-                    example: Jhane Doe
+                    example: Jane Doe
                   email:
                     type: string
                     example: jhane@example.com

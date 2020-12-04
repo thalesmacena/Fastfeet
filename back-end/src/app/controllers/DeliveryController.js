@@ -10,7 +10,7 @@ class DeliveryController {
   async index(req, res) {
     const { page = 1, limit = 5 } = req.query;
 
-    const deliverys = await Delivery.findAll({
+    const deliveries = await Delivery.findAll({
       attributes: [
         'id',
         'product',
@@ -44,24 +44,23 @@ class DeliveryController {
             {
               model: File,
               as: 'avatar',
-              attributes: ['id', 'path', 'url'],
+              attributes: ['name', 'path', 'url'],
             },
           ],
         },
         {
           model: File,
           as: 'signature',
-          attributes: ['id', 'path', 'url'],
+          attributes: ['name', 'path', 'url'],
         },
       ],
     });
 
-    return res.json(deliverys);
+    return res.json(deliveries);
   }
 
   async show(req, res) {
     const { deliveryId } = req.params;
-    const { page = 1, limit = 5 } = req.query;
 
     const delivery = await Delivery.findByPk(deliveryId, {
       attributes: [
@@ -73,8 +72,6 @@ class DeliveryController {
         'start_date',
         'end_date',
       ],
-      limit,
-      offset: (page - 1) * 5,
       include: [
         {
           model: Recipient,

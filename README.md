@@ -1,10 +1,40 @@
-# Fastfeet
+<div align="center">
+  <br />
+  <img src=".github/fastfeet-logo.png" width="546" alt="Fastfeet" />
+  <br />
+  <p>
+    <img src="https://img.shields.io/badge/made%20by-Thales%20Macena-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=visual-studio-code&logoColor=2D325E" alt="Made by Thales Macena">
+    <img alt="Top Language" src="https://img.shields.io/github/languages/top/thalesmacena/Fastfeet?color=2D325E&labelColor=F0DB4F&style=for-the-badge&logo=javascript&logoColor=2D325E">
+    <a href="https://github.com/thalesmacena/moveit/commits/master">
+      <img alt="Last Commits" src="https://img.shields.io/github/last-commit/thalesmacena/Fastfeet?color=2D325E&labelColor=F0DB4F&style=for-the-badge&logo=github&logoColor=2D325E">
+    </a>
+  </p>
+</div>
+
+## Tabela de Conteúdo
+- [Tabela de Conteúdo](#tabela-de-conteúdo)
+- [Sobre](#sobre)
+- [Instalação](#instalação)
+  - [Back-end](#back-end)
+    - [Rodando a aplicação](#rodando-a-aplicação)
+    - [Documentação da API](#documentação-da-api)
+- [Front-End](#front-end)
+- [Mobile](#mobile)
+
+
+## Sobre
 Aplicação de uma Transportadora Ficticia (Back-end, Front-end e Mobile) utilizando Node.JS, React e React Native, um desafio proposto pela Rocketseat Education, como parte de seu bootcamp.
 
-## Back-end
+## Instalação
+```PowerShell
+# Para copiar o repositório
+git clone https://github.com/thalesmacena/Fastfeet.git
+```
+
+### Back-end
 O back-end foi feito utilizando Express.js, ele também utiliza o padrão de arquitetura MVC com o Sequelize, integrando Postgres como banco de dados e Redis para os background jobs. Além disso o projeto utiliza o padrão de estilo do Airbnb que junto com o plugin do prettier garantem um código limpo e claro.
 
-### Rodando a aplicação
+#### Rodando a aplicação
 
 **Pré Requisitos**
 
@@ -52,7 +82,7 @@ yarn queue
 
 7. Utilize a extesão abrindo os arquivos .http da pasta `src/requests` ou utilize essas requisições como base no seu client de API
 
-### Documentação da API
+#### Documentação da API
 
 Para vizualizar a documentação da API utilize o seguinte comando:
 ```
@@ -60,3 +90,7 @@ yarn api
 ```
 
 Esse comando ira renderizar a documentação da api em `localhost:8080`
+
+## Front-End
+
+## Mobile

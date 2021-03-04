@@ -5,7 +5,7 @@
   <p>
     <img src="https://img.shields.io/badge/made%20by-Thales%20Macena-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=visual-studio-code&logoColor=2D325E" alt="Made by Thales Macena">
     <img alt="Top Language" src="https://img.shields.io/github/languages/top/thalesmacena/Fastfeet?color=2D325E&labelColor=F0DB4F&style=for-the-badge&logo=javascript&logoColor=2D325E">
-    <a href="https://github.com/thalesmacena/moveit/commits/master">
+    <a href="https://github.com/thalesmacena/moveit/commits/main">
       <img alt="Last Commits" src="https://img.shields.io/github/last-commit/thalesmacena/Fastfeet?color=2D325E&labelColor=F0DB4F&style=for-the-badge&logo=github&logoColor=2D325E">
     </a>
   </p>

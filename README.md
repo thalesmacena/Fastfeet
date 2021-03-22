@@ -15,15 +15,15 @@
 - [🗂 Tabela de Conteúdo](#-tabela-de-conteúdo)
 - [📑 Sobre](#-sobre)
 - [💻 Technologies](#-technologies)
-  - [Back-end](#back-end)
-  - [Front-end Web](#front-end-web)
-  - [Front-end Mobile](#front-end-mobile)
-- [✨ Instalação](#-instalação)
   - [💱 Back-end](#-back-end)
+  - [🌐 Front-end Web](#-front-end-web)
+  - [📳 Front-end Mobile](#-front-end-mobile)
+- [✨ Instalação](#-instalação)
+  - [💱 Back-end](#-back-end-1)
     - [🔥 Rodando a aplicação](#-rodando-a-aplicação)
     - [🦻 Documentação da API](#-documentação-da-api)
-- [🌐 Front-End Web](#-front-end-web)
-- [📳 Front-End Mobile](#-front-end-mobile)
+- [🌐 Front-End Web](#-front-end-web-1)
+- [📳 Front-End Mobile](#-front-end-mobile-1)
 
 
 ## 📑 Sobre
@@ -36,12 +36,12 @@ Aplicação de uma Transportadora Ficticia (Back-end, Front-end e Mobile) utiliz
 
 <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/-Node.JS-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=node.js&logoColor=2D325E" alt="Node.js"></a>
 
-### Back-end
+### 💱 Back-end
 <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/-Express-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=express&logoColor=2D325E" alt="Express"></a>
 
 <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/-Docker-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=docker&logoColor=2D325E" alt="Docker"></a>
 
-<a href="https://sequelize.org/"><img src="https://img.shields.io/badge/-Javascript-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=Sequelize&logoColor=2D325E" alt="Sequelize"></a>
+<a href="https://sequelize.org/"><img src="https://img.shields.io/badge/-Sequelize-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=Javascript&logoColor=2D325E" alt="Sequelize"></a>
 
 <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/-PostgreSQL-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=postgresql&logoColor=2D325E" alt="PostgreSQL"></a>
 
@@ -59,8 +59,7 @@ Aplicação de uma Transportadora Ficticia (Back-end, Front-end e Mobile) utiliz
 
 <a href="https://github.com/Redocly/redoc"><img src="https://img.shields.io/badge/-ReDoc-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=swagger&logoColor=2D325E" alt="ReDoc"></a>
 
-
-### Front-end Web
+### 🌐 Front-end Web
 <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/-typescript-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=typescript&logoColor=2D325E" alt="Typescript"></a>
 
 <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/-React-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=react&logoColor=2D325E" alt="React"></a>
@@ -69,7 +68,7 @@ Aplicação de uma Transportadora Ficticia (Back-end, Front-end e Mobile) utiliz
 
 <a href="https://styled-components.com/"><img src="https://img.shields.io/badge/-Styled%20Components-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=styled-components&logoColor=2D325E" alt="Styled Components"></a>
 
-### Front-end Mobile
+### 📳 Front-end Mobile
 
 ## ✨ Instalação
 ```PowerShell

@@ -22,7 +22,9 @@
   - [💱 Back-end](#-back-end-1)
     - [🔥 Rodando a aplicação](#-rodando-a-aplicação)
     - [🦻 Documentação da API](#-documentação-da-api)
-- [🌐 Front-End Web](#-front-end-web-1)
+  - [🌐 Front-End Web](#-front-end-web-1)
+    - [🔥 Rodando a aplicação](#-rodando-a-aplicação-1)
+    - [🕵 Vizualizando o Projeto](#-vizualizando-o-projeto)
 - [📳 Front-End Mobile](#-front-end-mobile-1)
 
 
@@ -136,6 +138,36 @@ yarn api
 
 Esse comando ira renderizar a documentação da api em `localhost:8080`
 
-## 🌐 Front-End Web
+### 🌐 Front-End Web
+O Front-end é feito em React utilizando o Framework Next.js, ele é estilizado utilizando styled-components.
+
+#### 🔥 Rodando a aplicação
+
+**Pré Requisitos**
+
+Para rodar o aplicato você vai precisar ter instalado:
+- Uma versão atualizada do Node.JS
+- O Gerenciador de pacotes Yarn ou NPM
+- Uma cópia deste repositório localmente 
+
+**Rodando a aplicação**
+
+1. Acesse a pasta web, que é referente ao front-end web
+2. Utilize o seguinte comando para baixar as dependencias:
+
+```
+yarn
+```
+
+3. Você pode rodar o programa com o seguinte comando:
+
+```
+yarn dev
+```
+
+The application will run on [localhost:3000](http://localhost:3000/)
+
+#### 🕵 Vizualizando o Projeto
+Futuramente o front-end web da aplicação estará hospedado na vercel para ser experimentado
 
 ## 📳 Front-End Mobile

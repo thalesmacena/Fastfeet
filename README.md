@@ -14,6 +14,10 @@
 ## 🗂 Tabela de Conteúdo
 - [🗂 Tabela de Conteúdo](#-tabela-de-conteúdo)
 - [📑 Sobre](#-sobre)
+- [💻 Technologies](#-technologies)
+  - [Back-end](#back-end)
+  - [Front-end Web](#front-end-web)
+  - [Front-end Mobile](#front-end-mobile)
 - [✨ Instalação](#-instalação)
   - [💱 Back-end](#-back-end)
     - [🔥 Rodando a aplicação](#-rodando-a-aplicação)
@@ -24,6 +28,48 @@
 
 ## 📑 Sobre
 Aplicação de uma Transportadora Ficticia (Back-end, Front-end e Mobile) utilizando Node.JS, React e React Native, um desafio proposto pela Rocketseat Education, como parte de seu bootcamp.
+
+## 💻 Technologies
+<a href="https://yarnpkg.com/"><img src="https://img.shields.io/badge/-Yarn-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=yarn&logoColor=2D325E" alt="Yarn"></a>
+
+<a href="https://eslint.org/"><img src="https://img.shields.io/badge/-ESLint-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=eslint&logoColor=2D325E" alt="ESLint"></a>
+
+<a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/-Node.JS-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=node.js&logoColor=2D325E" alt="Node.js"></a>
+
+### Back-end
+<a href="https://expressjs.com/"><img src="https://img.shields.io/badge/-Express-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=express&logoColor=2D325E" alt="Express"></a>
+
+<a href="https://www.docker.com/"><img src="https://img.shields.io/badge/-Docker-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=docker&logoColor=2D325E" alt="Docker"></a>
+
+<a href="https://sequelize.org/"><img src="https://img.shields.io/badge/-Javascript-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=Sequelize&logoColor=2D325E" alt="Sequelize"></a>
+
+<a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/-PostgreSQL-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=postgresql&logoColor=2D325E" alt="PostgreSQL"></a>
+
+<a href="https://mongoosejs.com/"><img src="https://img.shields.io/badge/-MongooseJS-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=mongodb&logoColor=2D325E" alt="MongooseJS"></a>
+
+<a href="https://www.mongodb.com/"><img src="https://img.shields.io/badge/-MongoDB-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=mongodb&logoColor=2D325E" alt="MongoDB"></a>
+
+<a href="https://redis.io/"><img src="https://img.shields.io/badge/-Redis-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=redis&logoColor=2D325E" alt="Redis"></a>
+
+<a href="https://nodemailer.com/about/"><img src="https://img.shields.io/badge/-Nodemailer-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=javascript&logoColor=2D325E" alt="Nodemailer"></a>
+
+<a href="https://handlebarsjs.com/"><img src="https://img.shields.io/badge/-Handlebars-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=typescript&logoColor=2D325E" alt="Handlebars"></a>
+
+<a href="https://www.openapis.org/"><img src="https://img.shields.io/badge/-OpenAPI-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=openapi-initiative&logoColor=2D325E" alt="OpenAPI"></a>
+
+<a href="https://github.com/Redocly/redoc"><img src="https://img.shields.io/badge/-ReDoc-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=swagger&logoColor=2D325E" alt="ReDoc"></a>
+
+
+### Front-end Web
+<a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/-typescript-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=typescript&logoColor=2D325E" alt="Typescript"></a>
+
+<a href="https://reactjs.org/"><img src="https://img.shields.io/badge/-React-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=react&logoColor=2D325E" alt="React"></a>
+
+<a href="https://nextjs.org/"><img src="https://img.shields.io/badge/-Next.js-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=next.js&logoColor=2D325E" alt="Next.js"></a>
+
+<a href="https://styled-components.com/"><img src="https://img.shields.io/badge/-Styled%20Components-2D325E?labelColor=F0DB4F&style=for-the-badge&logo=styled-components&logoColor=2D325E" alt="Styled Components"></a>
+
+### Front-end Mobile
 
 ## ✨ Instalação
 ```PowerShell

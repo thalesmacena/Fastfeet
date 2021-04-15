@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   useEffect(() => {
     const storedTheme = Cookies.get('theme');
-    setTheme(storedTheme || 'dark');
+    setTheme(storedTheme || 'light');
   }, []);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <StyledComponentThemeProvider
-        theme={theme === 'light' ? lightTheme : darkTheme}
+        theme={theme === 'dark' ? darkTheme : lightTheme}
       >
         <GlobalStyles />
         {children}

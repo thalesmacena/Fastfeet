@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css';
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -19,23 +20,29 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
+
+  html, body, #__next {
+    height: 100%;
+  }
   
   body {
-    background: ${({ theme }) => theme.background};
+    background: ${({ theme }) => theme.colors.background};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
-    font: 400 0.875rem, sans-serif;
+    font: 400 0.875rem 'Inter', sans-serif;
   }
-
-  /*
-  #__next {
-
-  }
-  */
 
   button {
     cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
   }
 `;

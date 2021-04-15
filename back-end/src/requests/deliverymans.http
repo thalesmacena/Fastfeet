@@ -1,23 +1,23 @@
 // index 
-GET http://localhost:3333/deliverymans HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
+GET http://localhost:3333/deliverymans?q=john HTTP/1.1
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA5Njc4LCJleHAiOjE2MTkxMTQ0Nzh9.87k4cmbpHCulSfAAB0TPmbqPRksbAnZYOLRv9EM68kc
 
 ### store
 POST http://localhost:3333/deliverymans HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA5Njc4LCJleHAiOjE2MTkxMTQ0Nzh9.87k4cmbpHCulSfAAB0TPmbqPRksbAnZYOLRv9EM68kc
 
 {
   "name": "Jane Doe",
   "avatar_id": "1",
-  "email": "jhane@example.com",
+  "email": "jane@example.com",
   "user_id": 2
 }
 
 ### Update
 PUT http://localhost:3333/deliverymans/1 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA5Njc4LCJleHAiOjE2MTkxMTQ0Nzh9.87k4cmbpHCulSfAAB0TPmbqPRksbAnZYOLRv9EM68kc
 
 {
   "name": "John Doe",
@@ -27,4 +27,4 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 ###
 // Destroy
 DELETE http://localhost:3333/deliverymans/1 HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA2MjUxODQ4LCJleHAiOjE2MDY4NTY2NDh9.JuZM707MFmSBI6zbYmlYSgc5zW-tBddHityw4hA1K_I
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA5Njc4LCJleHAiOjE2MTkxMTQ0Nzh9.87k4cmbpHCulSfAAB0TPmbqPRksbAnZYOLRv9EM68kc

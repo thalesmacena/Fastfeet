@@ -10,6 +10,6 @@ POST http://localhost:3333/sessions HTTP/1.1
 content-type: application/json
 
 {
-  "email": "jane@example.com",
-  "password": "12345"
+  "email": "john@example.com",
+  "password": "123456"
 }

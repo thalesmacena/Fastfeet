@@ -10,6 +10,7 @@ export const lightTheme = {
     textInput: '#999999',
 
     divider: '#DDDDDD',
+    switch: '#7159c1',
 
     finished: '#2CA42B',
     finishedBar: '#DFF0DF',
@@ -39,6 +40,7 @@ export const darkTheme = {
     textInput: '#D1D1D1',
 
     divider: '#3A3A3A',
+    switch: '#F0f0f0',
 
     finished: '#2CA42B',
     finishedBar: '#DFF0DF',

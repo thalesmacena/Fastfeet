@@ -15,6 +15,7 @@ interface Theme {
     textInput: string;
 
     divider: string;
+    switch: string;
 
     finished: string;
     finishedBar: string;

@@ -14,6 +14,8 @@ interface Theme {
     textInBackground: string;
     textInput: string;
 
+    divider: string;
+
     finished: string;
     finishedBar: string;
     pending: string;

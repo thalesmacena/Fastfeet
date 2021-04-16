@@ -9,6 +9,8 @@ export const lightTheme = {
     textInBackground: '#444444',
     textInput: '#999999',
 
+    divider: '#DDDDDD',
+
     finished: '#2CA42B',
     finishedBar: '#DFF0DF',
     pending: '#C1BC35',
@@ -33,8 +35,10 @@ export const darkTheme = {
     textInPrimary: '#fff',
     secondary: '#03DAC6',
     text: '#CECECE',
-    textInBackground: '#F8F8F8',
-    textInput: '#F4F4F4',
+    textInBackground: '#FFF',
+    textInput: '#D1D1D1',
+
+    divider: '#3A3A3A',
 
     finished: '#2CA42B',
     finishedBar: '#DFF0DF',

@@ -1,4 +1,3 @@
-import { BiLoaderAlt } from 'react-icons/bi';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -25,28 +24,5 @@ export const Container = styled.div`
     img {
       width: 30rem;
     }
-  }
-`;
-
-export const LoadingCircle = styled(BiLoaderAlt)`
-  font-size: 4.25rem;
-
-  animation: roll 1s infinite;
-
-  @keyframes roll {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @media (max-width: 1080px) {
-    font-size: 3.25rem;
-  }
-
-  @media (max-width: 720px) {
-    font-size: 2.25rem;
   }
 `;

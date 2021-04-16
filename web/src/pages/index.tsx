@@ -1,6 +1,7 @@
+import { LoadingSpin } from '@/components/LoadingSpin';
 import { ThemeContext } from '@/contexts/ThemeContext';
 import useUser from '@/lib/useUser';
-import { Container, LoadingCircle } from '@/styles/pages/Home';
+import { Container } from '@/styles/pages/Home';
 import { useContext } from 'react';
 
 const Home = () => {
@@ -11,8 +12,6 @@ const Home = () => {
     redirectIfFound: true
   });
 
-  useUser({ redirectTo: '/signin' });
-
   return (
     <Container>
       <>
@@ -21,7 +20,7 @@ const Home = () => {
         ) : (
           <img src="logo-light@2x.svg" alt="Fastfeet" />
         )}
-        <LoadingCircle color="white" />
+        <LoadingSpin color="white" spinWidth={3} />
       </>
     </Container>
   );

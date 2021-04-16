@@ -12,6 +12,8 @@ const Home = () => {
     redirectIfFound: true
   });
 
+  useUser({ redirectTo: '/signin' });
+
   return (
     <Container>
       <>

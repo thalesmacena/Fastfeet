@@ -27,12 +27,12 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   };
 
   useEffect(() => {
-    const storedTheme = Cookies.get('theme');
+    const storedTheme = Cookies.get('fastfeet/theme');
     setTheme(storedTheme || 'light');
   }, []);
 
   useEffect(() => {
-    Cookies.set('theme', theme);
+    Cookies.set('fastfeet/theme', theme);
   }, [theme]);
 
   return (

@@ -10,6 +10,7 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
+import { ThemeSwitch } from './ThemeSwitch';
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);
@@ -32,32 +33,33 @@ const Header = () => {
             alt="fast-feet"
           />
 
-          <NavLink active={router.pathname === '/deliveries'}>
-            <Link href="/deliveries" passHref>
+          <NavLink active={router.pathname === '/dashboard/deliveries'}>
+            <Link href="/dashboard/deliveries" passHref>
               ENCOMENDAS
             </Link>
           </NavLink>
 
-          <NavLink active={router.pathname === '/deliverymans'}>
-            <Link href="/deliverymans" passHref>
+          <NavLink active={router.pathname === '/dashboard/deliverymans'}>
+            <Link href="/dashboard/deliverymans" passHref>
               ENTREGADORES
             </Link>
           </NavLink>
 
-          <NavLink active={router.pathname === '/recipients'}>
-            <Link href="/recipients" passHref>
+          <NavLink active={router.pathname === '/dashboard/recipients'}>
+            <Link href="/dashboard/recipients" passHref>
               DESTINATÁRIOS
             </Link>
           </NavLink>
 
-          <NavLink active={router.pathname === '/problems'}>
-            <Link href="/problems" passHref>
+          <NavLink active={router.pathname === '/dashboard/problems'}>
+            <Link href="/dashboard/problems" passHref>
               PROBLEMAS
             </Link>
           </NavLink>
         </nav>
 
         <aside>
+          <ThemeSwitch />
           <Profile>
             <div>
               <strong>{user && user.name}</strong>

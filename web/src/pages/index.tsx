@@ -8,7 +8,7 @@ const Home = () => {
   const { theme } = useContext(ThemeContext);
 
   useUser({
-    redirectTo: '/dashboard',
+    redirectTo: '/dashboard/deliveries',
     redirectIfFound: true
   });
 
@@ -22,7 +22,7 @@ const Home = () => {
         ) : (
           <img src="logo-light@2x.svg" alt="Fastfeet" />
         )}
-        <LoadingSpin color="white" spinWidth={3} />
+        <LoadingSpin color="white" spinWidth={3} duration={1} />
       </>
     </Container>
   );

@@ -48,7 +48,7 @@ export const Modal = styled.div`
         font: 400 1rem 'Inter', sans-serif;
 
         &:focus {
-          border-color: ${({ theme }) => lighten(0.03, theme.colors.primary)};
+          border-color: ${({ theme }) => lighten(0.03, theme.colors.button)};
         }
 
         &::placeholder {
@@ -67,7 +67,7 @@ export const Modal = styled.div`
     button {
       margin: 5px 0 0;
       height: 45px;
-      background: ${({ theme }) => theme.colors.primary};
+      background: ${({ theme }) => theme.colors.button};
       font-weight: bold;
       color: ${({ theme }) => theme.colors.textInPrimary};
       border: 0;
@@ -76,7 +76,7 @@ export const Modal = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${({ theme }) => darken(0.03, theme.colors.primary)};
+        background: ${({ theme }) => darken(0.03, theme.colors.button)};
       }
 
       &:disabled {

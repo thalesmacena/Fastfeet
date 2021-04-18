@@ -8,6 +8,7 @@ export const lightTheme = {
     text: '#666666',
     textInBackground: '#444444',
     textInput: '#999999',
+    button: '#7159c1',
 
     divider: '#DDDDDD',
     switch: '#7159c1',
@@ -34,6 +35,7 @@ export const darkTheme = {
     backgroundDashboard: '#121212',
     primary: '#7159c1',
     textInPrimary: '#fff',
+    button: '#3A3A3A',
     secondary: '#03DAC6',
     text: '#CECECE',
     textInBackground: '#FFF',

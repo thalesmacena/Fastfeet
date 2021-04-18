@@ -13,6 +13,7 @@ interface Theme {
     text: string;
     textInBackground: string;
     textInput: string;
+    button: string;
 
     divider: string;
     switch: string;

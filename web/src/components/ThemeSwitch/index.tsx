@@ -1,6 +1,6 @@
 import { ThemeContext } from '@/contexts/ThemeContext';
-import { DarkSwitch, LightSwitch } from '@/styles/components/ThemeSwitch';
 import { useContext } from 'react';
+import { DarkSwitch, LightSwitch } from './styles';
 
 export const ThemeSwitch = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

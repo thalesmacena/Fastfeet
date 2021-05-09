@@ -1,6 +1,6 @@
-import { Wrapper } from '@/styles/components/DefaultLayout';
+import Header from '@/components/Header';
 import { ReactElement } from 'react';
-import Header from './Header';
+import { Content, Wrapper } from './styles';
 
 interface DefaultChildren {
   children: ReactElement;
@@ -10,7 +10,7 @@ const DefaultLayout = ({ children }: DefaultChildren) => {
   return (
     <Wrapper>
       <Header />
-      {children}
+      <Content>{children}</Content>
     </Wrapper>
   );
 };

@@ -1,16 +1,11 @@
+import { ThemeSwitch } from '@/components/ThemeSwitch';
 import { ThemeContext } from '@/contexts/ThemeContext';
 import useUser from '@/lib/useUser';
 import { loginApi } from '@/services/api';
-import {
-  ContainerHeader,
-  Content,
-  NavLink,
-  Profile
-} from '@/styles/components/Header';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { ThemeSwitch } from './ThemeSwitch';
+import { ContainerHeader, Content, NavLink, Profile } from './styles';
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);

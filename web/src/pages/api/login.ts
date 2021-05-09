@@ -1,4 +1,4 @@
-import type { NextApiRequestSession } from '@/interfaces/requestSession';
+import type { NextApiRequestSession } from '@/interfaces';
 import withSession from '@/lib/withSession';
 import { api } from '@/services/api';
 import type { NextApiResponse } from 'next';

@@ -20,4 +20,4 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxN
 ###
 // delete
 DELETE http://localhost:3333/problems/3/cancel-delivery HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA4ODc3LCJleHAiOjE2MTkxMTM2Nzd9.LE6lE8BBEjhvdfMUU1Z-CKeu99aqo8FhLntfcawn89s
+authorization: Bearer 

@@ -18,7 +18,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxN
 // Order Withdraw start_date
 PUT http://localhost:3333/delivery/1/withdraw HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjA2NTEzNjg4LCJleHAiOjE2MDcxMTg0ODh9.bRTu7ynSnA0vIpmXJ9JYSJujtHi0WDAHkhjdvmd34jg
+authorization: Bearer 
 
 {
   "end_date": "2022-01-01T15:00:00-03:00",

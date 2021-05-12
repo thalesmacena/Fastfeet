@@ -1,6 +1,6 @@
 POST http://localhost:3333/files HTTP/1.1
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA4ODc3LCJleHAiOjE2MTkxMTM2Nzd9.LE6lE8BBEjhvdfMUU1Z-CKeu99aqo8FhLntfcawn89s
+authorization: Bearer
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="file"; filename="image.png"

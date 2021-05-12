@@ -1,12 +1,12 @@
 GET http://localhost:3333/deliveries/ HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 ###
 GET http://localhost:3333/deliveries/1 HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 ###
 POST http://localhost:3333/deliveries/ HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 
 {
   "product": "Pack of Example",
@@ -16,7 +16,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 ###
 PUT http://localhost:3333/deliveries/1 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 
 {
   "product": "Pack of Example",
@@ -25,5 +25,5 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 }
 ###
 DELETE http://localhost:3333/deliveries/2 HTTP/1.1
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 ###

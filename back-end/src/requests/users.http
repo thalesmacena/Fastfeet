@@ -1,12 +1,12 @@
 // Método Index
 GET http://localhost:3333/users
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
+authorization: Bearer 
 ###
 
 // Métodod Store
 POST http://localhost:3333/users HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA4ODc3LCJleHAiOjE2MTkxMTM2Nzd9.LE6lE8BBEjhvdfMUU1Z-CKeu99aqo8FhLntfcawn89s
+authorization: Bearer 
 
 {
   "name": "Jane Doe",
@@ -19,7 +19,7 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 // Métodod Update
 PUT http://localhost:3333/users/2 HTTP/1.1
 content-type: application/json
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA4ODc3LCJleHAiOjE2MTkxMTM2Nzd9.LE6lE8BBEjhvdfMUU1Z-CKeu99aqo8FhLntfcawn89s
+authorization: Bearer 
 
 {
   "name": "Jane Doe",

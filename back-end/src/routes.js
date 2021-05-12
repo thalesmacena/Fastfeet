@@ -31,13 +31,13 @@ routes.get(
 );
 routes.get('/deliveryman/:deliverymanId/deliveries', OrderController.index);
 
-routes.put('/delivery/:deliveryId/withdraw', OrderStatusController.update);
+routes.put('/deliveries/:deliveryId/withdraw', OrderStatusController.update);
 
-routes.get('/delivery/problems', OrderProblemController.index);
+routes.get('/deliveries/problems', OrderProblemController.index);
 
-routes.get('/delivery/:deliveryId/problems', OrderProblemController.show);
+routes.get('/deliveries/:deliveryId/problems', OrderProblemController.show);
 
-routes.post('/delivery/:deliveryId/problems', OrderProblemController.store);
+routes.post('/deliveries/:deliveryId/problems', OrderProblemController.store);
 
 // admin routes
 routes.use(adminAuthMiddleware);
@@ -55,11 +55,11 @@ routes.post('/deliverymans', DeliverymanController.store);
 routes.put('/deliverymans/:id', DeliverymanController.update);
 routes.delete('/deliverymans/:id', DeliverymanController.delete);
 
-routes.get('/delivery', DeliveryController.index);
-routes.get('/delivery/:deliveryId', DeliveryController.show);
-routes.post('/delivery', DeliveryController.store);
-routes.put('/delivery/:deliveryId', DeliveryController.update);
-routes.delete('/delivery/:deliveryId', DeliveryController.delete);
+routes.get('/deliveries', DeliveryController.index);
+routes.get('/deliveries/:deliveryId', DeliveryController.show);
+routes.post('/deliveries', DeliveryController.store);
+routes.put('/deliveries/:deliveryId', DeliveryController.update);
+routes.delete('/deliveries/:deliveryId', DeliveryController.delete);
 
 routes.delete(
   '/problems/:problemId/cancel-delivery',

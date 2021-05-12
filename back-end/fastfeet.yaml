@@ -597,7 +597,7 @@ paths:
       responses:
         200:
           description: Deleta um e informa o nome do entregador deletado     
-  /delivery:
+  /deliveries:
     description: "Rotas CRUD de entregas, é preciso ser um administrador para usar estas rotas"
     get:
       description: Lista as entregas
@@ -830,7 +830,7 @@ paths:
           description: entrega não existe
         401:
           description: Entrega ja foi cancelada, ou usuario não está autenticado ou não é um administrador
-  /delivery/{deliveryID}:
+  /deliveries/{deliveryID}:
     get:
       description: Lista uma entrega
       summary: Lista uma entrega de acordo com o id informado

@@ -1,6 +1,6 @@
 // Método Index
 GET http://localhost:3333/users
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA4ODc3LCJleHAiOjE2MTkxMTM2Nzd9.LE6lE8BBEjhvdfMUU1Z-CKeu99aqo8FhLntfcawn89s
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
 ###
 
 // Métodod Store

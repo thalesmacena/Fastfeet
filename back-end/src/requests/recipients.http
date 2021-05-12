@@ -1,6 +1,6 @@
 // Método Index
 GET http://localhost:3333/recipients
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE4NTA5Njc4LCJleHAiOjE2MTkxMTQ0Nzh9.87k4cmbpHCulSfAAB0TPmbqPRksbAnZYOLRv9EM68kc
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIwNDQ3MjIxLCJleHAiOjE2MjEwNTIwMjF9.XboxBvI1KOJY2QATfgcjEWIL8kkj0r4K18r_l94gqiM
 ###
 // Métodod Store
 POST http://localhost:3333/recipients HTTP/1.1

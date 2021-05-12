@@ -16,7 +16,7 @@ const Header = () => {
   const handleLogout = async () => {
     await loginApi.get('logout');
 
-    router.push('/');
+    router.push('/signin');
   };
 
   return (

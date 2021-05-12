@@ -22,8 +22,8 @@ interface Theme {
     finishedBar: string;
     pending: string;
     pendingBar: string;
-    withdrawal: string;
-    withdrawalBar: string;
+    takeout: string;
+    takeoutBar: string;
     error: string;
     errorBar: string;
   };
@@ -31,6 +31,8 @@ interface Theme {
   modalOverlay: string;
   boxShadow: string;
   boxShadowModal: string;
+  boxShadowAction: string;
+  backgroundModalOverlay: string;
 }
 
 declare module 'styled-components' {

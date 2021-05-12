@@ -17,8 +17,8 @@ export const lightTheme = {
     finishedBar: '#DFF0DF',
     pending: '#C1BC35',
     pendingBar: '#F0F0DF',
-    withdrawal: '#4D85EE',
-    withdrawalBar: '#BAD2FF',
+    takeout: '#4D85EE',
+    takeoutBar: '#BAD2FF',
     error: '#DE3B3B',
     errorBar: '#FAB0B0'
   },
@@ -26,7 +26,9 @@ export const lightTheme = {
     'linear-gradient(90deg, rgba(113,89,193,1) 0%, rgba(125,64,231,1) 100%);',
   modalOverlay: 'rgba(74, 74, 74, 0.8)',
   boxShadow: '0 0 2px 1px rgb(0 0 0 / 33%)',
-  boxShadowModal: '0 0 3.75rem rgba(0, 0, 0, 0.05)'
+  boxShadowModal: '0 0 3.75rem rgba(0, 0, 0, 0.05)',
+  boxShadowAction: '0px 0px 2px rgb(0,0,0,0.05)',
+  backgroundModalOverlay: 'rgba(220, 218, 215, 0.8)'
 };
 
 export const darkTheme = {
@@ -48,8 +50,8 @@ export const darkTheme = {
     finishedBar: '#DFF0DF',
     pending: '#C1BC35',
     pendingBar: '#F0F0DF',
-    withdrawal: '#4D85EE',
-    withdrawalBar: '#BAD2FF',
+    takeout: '#4D85EE',
+    takeoutBar: '#BAD2FF',
     error: '#DE3B3B',
     errorBar: '#FAB0B0'
   },
@@ -57,5 +59,7 @@ export const darkTheme = {
     'linear-gradient(90deg, rgba(18, 18, 18, 1) 0%, rgba(31, 31, 31,1) 100%);',
   modalOverlay: 'rgba(74, 74, 74, 0.8)',
   boxShadow: '0 0 2px 1px rgb(0 0 0 / 33%)',
-  boxShadowModal: '0 0 3.75rem rgba(0, 0, 0, 0.05)'
+  boxShadowModal: '0 0 3.75rem rgba(0, 0, 0, 0.05)',
+  boxShadowAction: '0px 0px 2px rgb(0,0,0,0.05)',
+  backgroundModalOverlay: 'rgba(25, 26, 32, 0.8)'
 };

@@ -1,4 +1,11 @@
-import { ReactNode, useContext, useState } from 'react';
+import {
+  cloneElement,
+  isValidElement,
+  ReactNode,
+  useContext,
+  useMemo,
+  useState
+} from 'react';
 import { MdMoreHoriz } from 'react-icons/md';
 import { ThemeContext } from 'styled-components';
 import { ListActionContainer } from './styles';
@@ -15,6 +22,12 @@ const ListAction = ({ children }: IListAction) => {
     setVisible(!visible);
   };
 
+  const childrenWithVisible = useMemo(
+    () =>
+      isValidElement(children) && cloneElement(children, { hide: setVisible }),
+    [children]
+  );
+
   return (
     <>
       <ListActionContainer>
@@ -22,7 +35,7 @@ const ListAction = ({ children }: IListAction) => {
           <MdMoreHoriz size={22} color={colors.secondary} />
         </button>
       </ListActionContainer>
-      {visible && children}
+      {visible && childrenWithVisible}
     </>
   );
 };

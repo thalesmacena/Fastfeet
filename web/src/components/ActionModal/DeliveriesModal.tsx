@@ -1,6 +1,7 @@
 import { api } from '@/services/api';
+import { useClickOut } from '@/util/useCloseModal';
 import Link from 'next/link';
-import { useContext, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useContext, useMemo, useState } from 'react';
 import { MdCreate, MdDeleteForever, MdVisibility } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import { ThemeContext } from 'styled-components';
@@ -11,14 +12,20 @@ interface IDeliveriesModal {
   page: string;
   handleInfo: (delivery: any) => void;
   delivery: any;
+  hide: Dispatch<SetStateAction<boolean>>;
 }
 
 export const DeliveriesModal = ({
   page,
   handleInfo,
-  delivery
+  delivery,
+  hide
 }: IDeliveriesModal) => {
   const { colors } = useContext(ThemeContext);
+
+  const modal = useClickOut(() => {
+    hide(false);
+  });
 
   const [modalVisible, setModalVisible] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -27,6 +34,8 @@ export const DeliveriesModal = ({
     () => `Tem certeza que deseja deletar a encomenda #${delivery.id}?`,
     [delivery]
   );
+
+  const title = useMemo(() => 'Deletar Encomendas', []);
 
   const handleVisible = () => {
     setVisible(true);
@@ -51,7 +60,7 @@ export const DeliveriesModal = ({
   return (
     <>
       {visible && (
-        <ModalContainer>
+        <ModalContainer ref={modal}>
           <>
             <div>
               <button type="button" onClick={() => handleInfo(delivery)}>
@@ -78,6 +87,7 @@ export const DeliveriesModal = ({
       )}
       {modalVisible && (
         <ConfirmModal
+          title={title}
           message={message}
           resetVisible={handleVisible}
           action={handleDelete}

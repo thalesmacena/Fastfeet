@@ -20,22 +20,27 @@ export const OverlayModal = styled.div`
 export const ConfirmModalContainer = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
 
   width: 100%;
-  max-width: 25rem;
-  padding: 2rem 3rem;
+  max-width: 30rem;
+  padding: 1rem 1.5rem;
   border-radius: 5px;
 
   background: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) => theme.boxShadowModal};
 
-  text-align: center;
+  text-align: start;
   color: ${({ theme }) => theme.colors.textInBackground};
 
   strong {
+    align-self: flex-start;
     margin-bottom: 2rem;
     font: 700 1rem Inter, sans-serif;
+  }
+
+  span {
+    align-self: flex-start;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -44,7 +49,7 @@ export const ButtonSelection = styled.div`
   width: 100%;
 
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 
   button {
     height: 2.25rem;
@@ -63,6 +68,15 @@ export const ButtonSelection = styled.div`
 
     &:hover {
       background: ${({ theme }) => darken(0.03, theme.colors.primary)};
+    }
+
+    &:last-child {
+      background-color: ${({ theme }) => theme.colors.error};
+      margin-left: 10px;
+    }
+
+    &:last-child:hover {
+      background: ${({ theme }) => darken(0.03, theme.colors.error)};
     }
   }
 `;
